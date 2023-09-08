@@ -17,7 +17,7 @@ function InputHora() {
       </label>
       <input
         type="time"
-        className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         onChange={handleTimeChange}
         value={selectedTime}
       />

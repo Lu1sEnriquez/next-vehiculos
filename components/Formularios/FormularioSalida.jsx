@@ -5,6 +5,7 @@ import InputPlacaVehiculo from "./InputPlacaVehiculo";
 import InputName from "./InputName";
 import InputHora from "./InputHora";
 import InputKilometraje from "./InputKilometraje";
+import InputCarroceria from "./InputCarroceria";
 
 function FormularioSalida() {
   return (
@@ -19,6 +20,7 @@ function FormularioSalida() {
         <InputHora />
         <InputKilometraje/>
         <InputName text={'Nombre Vigilante:'} />
+        <InputCarroceria></InputCarroceria>
       </div>
     </div>
   );

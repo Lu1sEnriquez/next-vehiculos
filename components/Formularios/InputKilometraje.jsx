@@ -6,7 +6,7 @@ function InputKilometraje() {
           <label className="block text-gray-600 font-bold mb-2">
             Kilometraje:
             <input
-              className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="number"
               id=""
             />

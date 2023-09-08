@@ -5,7 +5,7 @@ import placaImg from "@/assets/placa-vehiculo.jpg";
 import { useState } from "react";
 
 function InputPlacaVehiculo() {
-  const [placa, setPlaca] = useState(null);
+  const [placa, setPlaca] = useState('');
 
   const handleInputPlaca = (event) => {
     const nuevoValor = event.target.value;
@@ -19,7 +19,7 @@ function InputPlacaVehiculo() {
             <label className="block text-gray-600 font-bold mb-2">
               Placa Vehiculo:
               <input
-                className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline uppercase"
+                className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline uppercase"
                 type="text"
                 maxLength={8}
                 id=""
@@ -35,11 +35,11 @@ function InputPlacaVehiculo() {
           {placa && (
             <>
               <Image
-                className="w-32 "
+                className="w-20 "
                 src={placaImg}
                 alt="placa"
               ></Image>
-              <div className="absolute top-5 left-3 uppercase flex text-center text-xl font-bold">
+              <div className="absolute top-3 left-3 uppercase flex text-center font-sans font-bold">
                 {placa}
               </div>
             </>
