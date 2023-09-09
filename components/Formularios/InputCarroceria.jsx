@@ -10,6 +10,7 @@ function InputCarroceria() {
         <input className="w-5 h-5 checked:bg-black border-red"
           type="radio"
           name="daños"
+          id="daños"
         />
         Si
       </label>

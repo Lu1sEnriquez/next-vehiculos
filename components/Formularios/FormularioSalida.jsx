@@ -10,13 +10,13 @@ import InputCarroceria from "./InputCarroceria";
 function FormularioSalida() {
   return (
     <div className="md:px-5 flex flex-wrap justify-around ">
-      <div className="columna1 w-72 sm:w-30 sm:text-2xl">
+      <div className="columna1 lg:w-96 md:w-72 sm:w-30 lg:text-2xl sm:text-xl">
         <InputDate />
         <InputName text={'Nombre Solicitante:'} />
         <InputPlacaVehiculo />
       </div>
 
-      <div className="columna2 w-72 sm:w-30 sm:text-2xl ">
+      <div className="columna2 lg:w-96 md:w-72 sm:w-30 lg:text-2xl sm:text-xl">
         <InputHora />
         <InputKilometraje/>
         <InputName text={'Nombre Vigilante:'} />

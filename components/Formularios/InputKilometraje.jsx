@@ -8,7 +8,8 @@ function InputKilometraje() {
             <input
               className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="number"
-              id=""
+              max={999}
+              id="Kilometraje"
             />
           </label>
         </div>
