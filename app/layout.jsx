@@ -1,6 +1,8 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/NavbarMovil";
 import "./globals.css";
-import { Inter } from "next/font/google";
+
+import NavbarDesktop from "@/components/navbarDesktop";
+import NavbarPrincipal from "@/components/NavbarPrincipal";
 
 export const metadata = {
   title: "Sistema Vehicular Itson",
@@ -9,14 +11,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="relative">
       
 
-      <body className=" lg:text-3xl md:text-2xl sm:text-xl sm:bg-white ">
-        <Navbar></Navbar>
+      <body className="absolute lg:text-3xl md:text-2xl sm:text-xl sm:bg-white h-screen ">
+      <NavbarPrincipal></NavbarPrincipal>
         <main
-          className="   sm:w-full  md:mx-auto 
-        mt-16 h-[calc(100vh-5rem)]  flex justify-center items-center flex-col"
+          className="  sm:w-full  md:mx-auto 
+        mt-16 md:mt-0  h-full  flex justify-center items-center flex-col"
         >
           {children}
         </main>

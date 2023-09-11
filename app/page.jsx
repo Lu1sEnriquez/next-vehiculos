@@ -1,21 +1,26 @@
-import Users from "../components/Users";
+/* importaciones de next */
+import Image from "next/image";
+import Link from "next/link";
 
+/* importaciones de Componentes */
+import ButtonLobby from "@/components/lobbyComponents/buttonLobby";
 
+/* importaciones de img que necesitamos */
+import logoItson from "@/assets/icons/LogoItson.png";
+import ButtonsLobby from "@/components/lobbyComponents/ButtonsLobby";
 
-async function fetchUsers() {
-  const res = await fetch("https://reqres.in/api/users");
-  const data = await res.json();
-  return data.data;
-}
-async function page() {
-  const users = await fetchUsers();
-  console.log(users);
+const lobby = () => {
   return (
-    <>
-      
-      <Users users={users}></Users>
-    </>
+    <main className="w-full  h-screen container  flex  flex-col  items-center ">
+      <div className="container   w-4/6 flex mt-20 md:mt-10  ">
+        <Image
+          src={logoItson}
+          alt="logo"
+        ></Image>
+      </div>
+      <ButtonsLobby></ButtonsLobby>
+    </main>
   );
-}
+};
 
-export default page;
+export default lobby;

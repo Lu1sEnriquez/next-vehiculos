@@ -1,4 +1,4 @@
-import InputFirma from "@/components/Formularios/InputFirma";
+import InputFirma from "@/components/Formularios/inputs/InputFirma";
 
 function firmaPage() {
   return (

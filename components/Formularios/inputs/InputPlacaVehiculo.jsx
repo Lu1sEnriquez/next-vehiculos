@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import placaImg from "@/assets/PlacaVehiculo.svg";
+import placaImg from "@/assets/icons/PlacaVehiculo.svg";
 import { useState } from "react";
 
 function InputPlacaVehiculo() {
@@ -9,19 +9,21 @@ function InputPlacaVehiculo() {
 
   const handleInputPlaca = (event) => {
     const valor = event.target.value;
-    const nuevoValor =formatearMatriculaMexicana(valor);
+    const nuevoValor = formatearMatriculaMexicana(valor);
     setPlaca(nuevoValor);
   };
 
   function formatearMatriculaMexicana(inputValue) {
     // Eliminar cualquier carácter que no sea una letra o un dígito
-    const caracteresValidos = inputValue.replace(/[^A-Z0-9]/gi, '').toUpperCase();
-  
+    const caracteresValidos = inputValue
+      .replace(/[^A-Z0-9]/gi, "")
+      .toUpperCase();
+
     // Verificar la longitud y formatear según corresponda
     if (caracteresValidos.length >= 3) {
       const letras = caracteresValidos.substring(0, 3);
       const numeros = caracteresValidos.substring(3);
-  
+
       if (numeros.length === 3) {
         return `${letras}-${numeros}`;
       } else if (numeros.length === 4) {
@@ -30,7 +32,7 @@ function InputPlacaVehiculo() {
         return `${letras}-${numerosParte1}-${numerosParte2}`;
       }
     }
-  
+
     return caracteresValidos;
   }
 
@@ -38,28 +40,31 @@ function InputPlacaVehiculo() {
     <div className="relative">
       <div className="flex flex-row justify-start  ">
         <div className="w-48 sm:text-2xl">
-          <div className="mt-4">
-            <label className="block text-gray-600 font-bold mb-2">
-              Placa Vehiculo:
-              <input
-                className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline uppercase"
-                type="text"
-                maxLength={9}
-                id=""
-                
-                onChange={handleInputPlaca}
-                value={placa}
-              />
-             
-            </label>
-          </div>
+          <label className="block text-gray-500 font-semibold mb-2">
+            Placa Vehiculo:
+          </label>
+          <input
+            className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline uppercase
+                shadow-md shadow-gray-300
+                "
+            type="text"
+            maxLength={9}
+            id=""
+            onChange={handleInputPlaca}
+            value={placa}
+          />
         </div>
 
-        <div className="relative top-5 sm:top-10  md:top-12 lg:top-5  ml-2 z-0 ">
+        <div
+          className="relative top-5 sm:top-10  md:top-10 lg:top-6  
+        ml-3 lg:ml-8
+        z-0 
+        "
+        >
           {placa && (
             <>
               <Image
-                className="w-28 sm:w-24 md:w-22 lg:w-36 "
+                className="w-28 sm:w-28 md:w-22 lg:w-36 "
                 src={placaImg}
                 alt="placa"
               ></Image>
@@ -69,7 +74,7 @@ function InputPlacaVehiculo() {
               top-6 left-4 sm:top-4 lg:top-7  sm:left-3 lg:left-4   
               uppercase 
               flex text-center font-sans 
-              font-bold lg:" 
+              font-bold lg:"
               >
                 {placa}
               </div>

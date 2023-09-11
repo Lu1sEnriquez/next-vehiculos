@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import LabelFormulario from "../LabelFormulario";
 
 function InputHora() {
 
@@ -12,16 +13,18 @@ function InputHora() {
   };
   return (
     <>
-      <label className="block text-gray-600 font-bold mb-2 mt-4">
-        Hora de Salida:
-      </label>
+    <div className="w-full">
+      <LabelFormulario>Fecha de Salida:</LabelFormulario>
       <input
         type="time"
-        className="border border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="border bg-white border-slate-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
+        shadow-md shadow-gray-300
+        "
         onChange={handleTimeChange}
         value={selectedTime}
         id="hora"
       />
+      </div>
     </>
   );
 }
