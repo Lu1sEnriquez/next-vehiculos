@@ -1,5 +1,8 @@
 'use client'
-const useDeviceSize = () => {
+
+import { useEffect, useState } from "react";
+
+const useDeviceSizeWindow = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -17,9 +20,9 @@ const useDeviceSize = () => {
   }, []);
 
   return {
-    width: width,
-    height: height,
+    width,
+    height
   };
 };
 
-export default useDeviceSize;
+export default useDeviceSizeWindow;
