@@ -9,8 +9,8 @@ function InputPlacaVehiculo() {
 
   const handleInputPlaca = (event) => {
     const valor = event.target.value;
-    const nuevoValor = formatearMatriculaMexicana(valor);
-    setPlaca(nuevoValor);
+    // const nuevoValor = formatearMatriculaMexicana(valor);
+    setPlaca(valor);
   };
 
   function formatearMatriculaMexicana(inputValue) {
