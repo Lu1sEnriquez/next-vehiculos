@@ -1,6 +1,5 @@
 
 import FormularioSalida from "@/components/Formularios/FormularioSalida";
-import ButtonMas from "@/components/buttonMas";
 
 function page() {
   return (

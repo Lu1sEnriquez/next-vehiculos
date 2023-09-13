@@ -1,6 +1,6 @@
 'use client'
 
-import ButtonActiveModal from "@/components/Formularios/ButtonActiveModal"
+import ButtonActiveModal from "@/components/modal/ButtonActiveModal"
 import InputFirma from "@/components/Formularios/inputs/InputFirma"
 
 function page() {

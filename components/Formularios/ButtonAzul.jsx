@@ -1,11 +1,8 @@
-function ButtonSiguiente({onClick, text}) {
+function ButtonAzul({onClick, text}) {
   return (
     <button
     onClick={onClick}
-      className="md:absolute block
-        md:right-16 md:bottom-6
-        
-        
+      className="   
         bg-AzulTurquesa text-blanco
         px-5 py-2 rounded-md 
         shadow-lg
@@ -16,4 +13,4 @@ function ButtonSiguiente({onClick, text}) {
     </button>
   );
 }
-export default ButtonSiguiente;
+export default ButtonAzul;

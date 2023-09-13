@@ -1,8 +1,8 @@
 "use client";
 
 import useModal from "@/app/utils/useModal";
-import ButtonSiguiente from "./ButtonSiguiente";
-import Modal from "../Modal";
+import ButtonAzul from "../Formularios/ButtonAzul";
+import Modal from "./Modal";
 
 /**
  * 
@@ -15,8 +15,8 @@ import Modal from "../Modal";
 function ButtonActiveModal({ children, textButton, titleModal }) {
   const { isModalOpen, openModal, closeModal } = useModal();
   return (
-    <div>
-      <ButtonSiguiente
+    <>
+      <ButtonAzul
         text={"Agregar Firma"}
         onClick={openModal}
       />
@@ -28,7 +28,7 @@ function ButtonActiveModal({ children, textButton, titleModal }) {
       >
         {children}
       </Modal>
-    </div>
+    </>
   );
 }
 export default ButtonActiveModal;

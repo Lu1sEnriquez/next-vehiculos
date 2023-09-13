@@ -1,8 +1,8 @@
-import Navbar from "@/components/NavbarMovil";
+import Navbar from "@/components/nav/NavbarMovil";
 import "./globals.css";
 
-import NavbarDesktop from "@/components/navbarDesktop";
-import NavbarPrincipal from "@/components/NavbarPrincipal";
+import NavbarDesktop from "@/components/nav/navbarDesktop";
+import NavbarPrincipal from "@/components/nav/NavbarPrincipal";
 
 export const metadata = {
   title: "Sistema Vehicular Itson",

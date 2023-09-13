@@ -2,12 +2,12 @@
 import useElementSize from "@/app/utils/useElementSize";
 import React, { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
+import ButtonAzul from "../ButtonAzul";
 
 function InputFirma({ id }) {
   const contentSignaturePad = useRef(null);
   const { width, height } = useElementSize(contentSignaturePad);
-  console.log(width, height);
-
+console.log(width,height);
   const [firma, setFirma] = useState(null);
   const padId = `${id}-canvas`;
 
@@ -28,34 +28,33 @@ function InputFirma({ id }) {
 
   return (
     <>
-      <div className="h-full w-full firma-container text-black">
+      <div className="h-full w-full firma-container flex flex-col  justify-between text-black">
         <div
-          className="h-full w-full signature-container text-black border-2 border-red-600"
+          className="h-5/6    w-full signature-container text-black border-2 border-red-600"
           ref={contentSignaturePad}
         >
           <SignatureCanvas
             id={padId}
             className="signature-pad "
-            canvasProps={{width:width, height: height}}
+            canvasProps={{ width: width-2, height: height-2 }}
             ref={(ref) => setFirma(ref)}
           />
         </div>
 
-        <div className="bg-green-400">
-          <button
+        <div className="w-full  flex flex-row gap-x-3 justify-end p-3  ">
+          <ButtonAzul
             type="button"
             className="btn btn-clear"
             onClick={handleClearClick}
-          >
-            Limpiar
-          </button>
-          <button
+            text={'Limpiar'}
+          />        
+          <ButtonAzul
             type="button"
             className="btn btn-save"
             onClick={handleSaveClick}
-          >
-            Guardar
-          </button>
+          text={'Guardar'}
+          />
+          
         </div>
       </div>
     </>

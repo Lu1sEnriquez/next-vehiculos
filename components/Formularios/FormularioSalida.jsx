@@ -6,7 +6,7 @@ import InputName from "./inputs/InputName";
 import InputHora from "./inputs/InputHora";
 import InputKilometraje from "./inputs/InputKilometraje";
 import InputCarroceria from "./inputs/InputCarroceria";
-import ButtonActiveModal from "./ButtonActiveModal";
+import ButtonActiveModal from "../modal/ButtonActiveModal";
 import InputFirma from "./inputs/InputFirma";
 
 
