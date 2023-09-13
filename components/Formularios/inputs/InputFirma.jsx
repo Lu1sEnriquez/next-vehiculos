@@ -1,10 +1,13 @@
-'use client'
-import React, { useState } from "react";
+"use client";
+import useElementSize from "@/app/utils/useElementSize";
+import React, { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 
 function InputFirma({ id }) {
-  
-  
+  const contentSignaturePad = useRef(null);
+  const { width, height } = useElementSize(contentSignaturePad);
+  console.log(width, height);
+
   const [firma, setFirma] = useState(null);
   const padId = `${id}-canvas`;
 
@@ -25,29 +28,38 @@ function InputFirma({ id }) {
 
   return (
     <>
-      <div className="signature-container text-black">
-        <label htmlFor={padId}>Firma ({id}):</label>
-        <SignatureCanvas
-          id={padId}
-          className="signature-pad"
-          width={400}
-          height={200}
-          ref={(ref) => setFirma(ref)}
-        />
-        <button type="button" className="btn btn-clear" onClick={handleClearClick}>
-          Limpiar
-        </button>
-        <button type="button" className="btn btn-save" onClick={handleSaveClick}>
-          Guardar
-        </button>
+      <div className="h-full w-full firma-container text-black">
+        <div
+          className="h-full w-full signature-container text-black border-2 border-red-600"
+          ref={contentSignaturePad}
+        >
+          <SignatureCanvas
+            id={padId}
+            className="signature-pad "
+            canvasProps={{width:width, height: height}}
+            ref={(ref) => setFirma(ref)}
+          />
+        </div>
+
+        <div className="bg-green-400">
+          <button
+            type="button"
+            className="btn btn-clear"
+            onClick={handleClearClick}
+          >
+            Limpiar
+          </button>
+          <button
+            type="button"
+            className="btn btn-save"
+            onClick={handleSaveClick}
+          >
+            Guardar
+          </button>
+        </div>
       </div>
     </>
   );
 }
 
 export default InputFirma;
-
-
-
-
-

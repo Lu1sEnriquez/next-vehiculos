@@ -6,9 +6,13 @@ import InputName from "./inputs/InputName";
 import InputHora from "./inputs/InputHora";
 import InputKilometraje from "./inputs/InputKilometraje";
 import InputCarroceria from "./inputs/InputCarroceria";
-import ButtonSiguiente from "./ButtonSiguiente";
+import ButtonActiveModal from "./ButtonActiveModal";
+import InputFirma from "./inputs/InputFirma";
+
 
 function FormularioSalida() {
+
+  
   return (
     <div className=" flex flex-wrap sm:justify-around 
     py-5 md:px-5 
@@ -32,7 +36,12 @@ function FormularioSalida() {
         <InputHora />
         <InputKilometraje />
         <InputName text={"Nombre Vigilante:"} />
-        <ButtonSiguiente></ButtonSiguiente>
+        
+        <ButtonActiveModal
+        textButton={'agregar Firma'}
+        >
+          <InputFirma/>
+        </ButtonActiveModal>
       </div>
     </div>
   );

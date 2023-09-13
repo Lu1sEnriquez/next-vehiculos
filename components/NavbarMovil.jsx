@@ -37,7 +37,7 @@ console.log(open);
      fixed  
      w-full 
      z-30
-     ${open ? "h-10" : "h-80"} duration-300
+     ${!open ? "h-10" : "h-80"} duration-300
     `}
     >
       <div className="flex flex-row justify-between w-full">
@@ -59,7 +59,7 @@ console.log(open);
           />
         </div>
       </div>
-      <div className={` flex  flex-col  gap-4 whitespace-pre duration-300 ${open && " opacity-0 translate-x-28  -translate-y-10 overflow-hidden"} `}>
+      <div className={` flex  flex-col  gap-4 whitespace-pre duration-300 ${!open && " opacity-0 translate-x-28  -translate-y-10 overflow-hidden"} `}>
         {menuItems.map((item) => (
           <Link
             className={`${item.margin && "md:mt-6 "}

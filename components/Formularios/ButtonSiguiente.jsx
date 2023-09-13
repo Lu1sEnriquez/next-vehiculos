@@ -1,6 +1,7 @@
-function ButtonSiguiente() {
+function ButtonSiguiente({onClick, text}) {
   return (
     <button
+    onClick={onClick}
       className="md:absolute block
         md:right-16 md:bottom-6
         
@@ -11,7 +12,7 @@ function ButtonSiguiente() {
         shadow-gray-400
         "
     >
-      Siguiente
+    {text}
     </button>
   );
 }
