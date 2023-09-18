@@ -3,11 +3,16 @@ import useElementSize from "@/app/utils/useElementSize";
 import React, { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import ButtonAzul from "../ButtonAzul";
+import CreateImageFirmaURL from "@/app/utils/CreateImageFirmaURL";
 
 function InputFirma({ id }) {
+  
+  
+  
   const contentSignaturePad = useRef(null);
   const { width, height } = useElementSize(contentSignaturePad);
-console.log(width,height);
+
+
   const [firma, setFirma] = useState(null);
   const padId = `${id}-canvas`;
 
@@ -19,18 +24,17 @@ console.log(width,height);
 
   function handleSaveClick() {
     if (firma) {
-      const imageDataURL = firma.toDataURL("image/png");
+      const imageDataURL =CreateImageFirmaURL(firma,'svg') // svg || png
       // Guarda la imagen en una variable imageDataURL
-      console.log("Imagen en formato base64:", imageDataURL);
-      // Puedes hacer más cosas con la imagen, como enviarla a un servidor, etc.
+      console.log("Imagen en formato base64:", imageDataURL);  
     }
   }
 
   return (
     <>
-      <div className="h-full w-full firma-container flex flex-col  justify-between text-black">
+      <div className="firma-container h-full w-full  flex pb-10 flex-col ">
         <div
-          className="h-5/6    w-full signature-container text-black border-2 border-red-600"
+          className="signature-container h-1 grow w-full  text-black border-2 "
           ref={contentSignaturePad}
         >
           <SignatureCanvas
@@ -41,7 +45,7 @@ console.log(width,height);
           />
         </div>
 
-        <div className="w-full  flex flex-row gap-x-3 justify-end p-3  ">
+        <div className="w-full  flex flex-row gap-x-3 justify-end p-3   ">
           <ButtonAzul
             type="button"
             className="btn btn-clear"

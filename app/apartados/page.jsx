@@ -1,17 +1,14 @@
-'use client'
 
-import ButtonActiveModal from "@/components/modal/ButtonActiveModal"
-import InputFirma from "@/components/Formularios/inputs/InputFirma"
+import InputGasolina from "@/components/inputGasolina/InputGasolina"
+
+
 
 function page() {
   return (
-    <ButtonActiveModal
-    textButton={'agregar Firma'}
-    titleModal={'Firma Guardia'}
-
-    >
-      <InputFirma></InputFirma>
-    </ButtonActiveModal>
+   <main className='container'>
+ <InputGasolina></InputGasolina>
+   
+   </main>
   )
 }
 export default page

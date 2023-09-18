@@ -11,7 +11,7 @@ import ButtonsLobby from "@/components/lobbyComponents/ButtonsLobby";
 
 const lobby = () => {
   return (
-    <main className="w-full  h-screen container  flex  flex-col  items-center ">
+    <main className="w-full  h-full container  flex  flex-col  items-center ">
       <div className="container   w-4/6 flex mt-20 md:mt-10  ">
         <Image
           src={logoItson}

@@ -1,25 +1,34 @@
-import React from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
+import useDeviceSizeWindow from "@/app/utils/useDeviseSizeWindow";
+import React from "react";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Modal = ({ isOpen, onClose, children, title }) => {
+  const {width,height} = useDeviceSizeWindow();
+  
   if (!isOpen) return null;
 
+  console.log(height);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center  justify-center bg-opacity-50 bg-black">
-      <div className="bg-white w-5/6 h-[calc(100vh-5rem)] rounded-lg overflow-hidden relative">
-        <button onClick={onClose} className="close-button absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-          <AiOutlineClose size={40} />
+    <section className="container-modal fixed z-50 flex items-center  justify-center bg-opacity-50 bg-black w-full h-[100dvh] top-0 left-0 min-h-fit ">
+      <div className={`modal bg-white rounded-lg overflow-hidden relative
+      ${height<250 ?  'h-[95%]':' h-[90dvh]'}  
+      ${width<400 ? 'w-[95%]': 'w-5/6'}
+      `}>
+        <button
+          onClick={onClose}
+          className="close-button absolute top-1 right-2 text-gray-500 hover:text-gray-700"
+        >
+          <AiOutlineClose size={35}  />
         </button>
-        <div className="bg-gray-800 text-white py-2 px-6">
+
+        <header className="bg-gray-800 text-white py-1 px-6 h-fit">
           <h1 className="text-2xl font-bold">{title}</h1>
-        </div>
-        <div className="relative m-2 w-auto h-5/6">
-          {children}
-        </div>
+        </header>
+        <div className="w-auto h-full">{children}</div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Modal;
-

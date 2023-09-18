@@ -3,20 +3,11 @@ import Link from "next/link";
 import React, { Suspense, useState, useEffect } from "react";
 
 import { HiMenuAlt3 } from "react-icons/hi";
-import { MdOutlineDashboard } from "react-icons/md";
-import { BsCalendarCheck } from "react-icons/bs";
-import { ImExit } from "react-icons/im";
-import { PiKeyReturnBold } from "react-icons/pi";
-import { TbReportSearch } from "react-icons/tb";
+
+import menuItems from "@/app/utils/menuItems";
 
 function NavbarDesktop() {
-  const menuItems = [
-    { name: "INICIO", link: "/", icon: MdOutlineDashboard },
-    { name: "APARTADOS", link: "/apartados", icon: BsCalendarCheck },
-    { name: "SALIDAS", link: "/salidas", icon: ImExit, margin: true },
-    { name: "LLEGADAS", link: "/llegadas", icon: PiKeyReturnBold },
-    { name: "REPORTES", link: "/reportes", icon: TbReportSearch, margin: true },
-  ];
+  
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen(!open);

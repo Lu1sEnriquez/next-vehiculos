@@ -6,27 +6,14 @@ import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
 
-import logoItson from "@/assets/icons/LogoItson.png";
-import { MdOutlineDashboard } from "react-icons/md";
-import { BsCalendarCheck } from "react-icons/bs";
-import { ImExit } from "react-icons/im";
-import { PiKeyReturnBold } from "react-icons/pi";
-import { TbReportSearch } from "react-icons/tb";
-
-const menuItems = [
-  { name: "INICIO", link: "/", icon: MdOutlineDashboard },
-  { name: "APARTADOS", link: "/apartados", icon: BsCalendarCheck },
-  { name: "SALIDAS", link: "/salidas", icon: ImExit, margin: true },
-  { name: "LLEGADAS", link: "/llegadas", icon: PiKeyReturnBold },
-  { name: "REPORTES", link: "/reportes", icon: TbReportSearch, margin: true },
-];
-
+import menuItems from "@/app/utils/menuItems"; // aqui estan los apartados del nav y sus iconos
 
 function NavbarMovil() {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen(!open);
-console.log(open);
+
+
   return (
     <nav
       className={` bg-azulOscuro text-blanco  font-medium
@@ -37,10 +24,10 @@ console.log(open);
      fixed  
      w-full 
      z-30
-     ${!open ? "h-10" : "h-80"} duration-300
+     ${!open ? "h-12" : "h-80"} duration-300
     `}
     >
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between w-full items-center">
         <Link
           href={"/"}
           className="w-28 ml-5"
