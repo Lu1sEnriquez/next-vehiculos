@@ -12,15 +12,7 @@ function InputGasolina() {
   const { height } = useElementSize(containerMarcador);
 
   const adjustPercentage = (porcentaje) => {
-    let ajuste = 2.3;
-    if (porcentaje < 50) {
-      // Disminuir uniformemente desde el valor actual hasta 0 cuando es menor que 50
-      console.log(porcentaje);
-      return porcentaje*1.5;
-    } else {
-      // Disminuir uniformemente desde 100 cuando es mayor o igual a 50
-      return porcentaje - ajuste * (porcentaje / 50);
-    }
+    return porcentaje
   };
 
   const handleChange = (e) => {
@@ -43,30 +35,38 @@ function InputGasolina() {
   const green = porcentaje * 2.55; // Valor de verde aumenta de 0 a 255
 
   // Define el estilo CSS del fondo con el gradiente
-  const backgroundStyle = {
-    background: `linear-gradient(${
-      porcentaje * 1.6
-    }deg , rgb(${red}, ${green}, 0)${
-      gradientPosition - 20
-    }%, transparent ${gradientPosition}%, transparent 100%)
-        `,
+  // const backgroundStyle = {
+  //   background: `linear-gradient(${
+  //     porcentaje * 1.8
+  //   }deg , rgb(${red}, ${green}, 0)${
+  //     gradientPosition 
+  //   }%, transparent ${gradientPosition}%, transparent 100%)
+  //       `,
     
-  };
+  // };
 
   return (
     <section className="gasolina-container border-2 border-red-500 flex flex-col justify-center items-center h-full">
       <div
-        className=" rounded-lg w-full border-t-2  rounded-t-full bg-primary relative flex justify-center h-full"
-        style={backgroundStyle}
+        className="overflow-hidden rounded-lg w-full border-t-2  rounded-t-full bg-primary relative flex justify-center h-full"
+        // style={backgroundStyle}
         ref={containerMarcador}
       >
+        <div className={`semicirculo absolute -z-10 w-full`}
+        style={{
+          borderRadius:height,
+          height:height*2,
+          background:`linear-gradient(90deg, rgba(${red},${green},23,1) 0%, rgba(${red},${green},26,1) 50%, rgba(255,255,255,1) 50%)`,
+          transform: `rotate(${(porcentaje*1.8)-90}deg)`
+        }}
+        ></div>
         <div
           style={{
             borderBottom: heightFlecha,
             transformOrigin: "bottom center",
             transform: `rotate(${porcentaje * 1.8 - 90}deg)`,
           }}
-          className={`absolute bottom-8 z-10  w-0 h-0  border-r-[0.8rem] border-l-[0.8rem] border-transparent  
+          className={`absolute bottom-0 z-10  w-0 h-0  border-r-[0.8rem] border-l-[0.8rem] border-transparent  
              
             `}
         ></div>
