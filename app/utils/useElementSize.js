@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 function useElementSize(targetRef) {
-  const [elementSize, setElementSize] = useState({ width: 0, height: 0 });
+  const [elementSize, setElementSize] = useState({ width: 0, height: 0, current:targetRef.current });
 
   useEffect(() => {
     const handleResize = () => {

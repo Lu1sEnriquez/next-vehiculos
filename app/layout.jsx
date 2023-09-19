@@ -7,6 +7,7 @@ import NavbarPrincipal from "@/components/nav/NavbarPrincipal";
 export const metadata = {
   title: "Sistema Vehicular Itson",
   description: "Sistema para Gestionar Vehiculos en Itson",
+ 
 };
 
 export default function RootLayout({ children }) {

@@ -5,13 +5,13 @@ import InputPlacaVehiculo from "./inputs/InputPlacaVehiculo";
 import InputName from "./inputs/InputName";
 import InputHora from "./inputs/InputHora";
 import InputKilometraje from "./inputs/InputKilometraje";
-import InputCarroceria from "./inputs/InputCarroceria";
+import InputCarroceria from "./inputCarroceria/InputCarroceria";
 import ButtonActiveModal from "../modal/ButtonActiveModal";
 import InputFirma from "./inputs/InputFirma";
 
 function FormularioSalida() {
   return (
-    <div
+    <section
       className=" flex flex-wrap sm:justify-around 
     py-5 md:px-5 
     gap-y-5 mr-5 md:gap-0 w-full"
@@ -43,7 +43,7 @@ function FormularioSalida() {
           <InputFirma />
         </ButtonActiveModal>
       </div>
-    </div>
+    </section>
   );
 }
 export default FormularioSalida;

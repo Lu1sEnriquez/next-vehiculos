@@ -7,7 +7,7 @@ const Modal = ({ isOpen, onClose, children, title }) => {
   
   if (!isOpen) return null;
 
-  console.log(height);
+  
 
   return (
     <section className="container-modal fixed z-50 flex items-center  justify-center bg-opacity-50 bg-black w-full h-[100dvh] top-0 left-0 min-h-fit ">
