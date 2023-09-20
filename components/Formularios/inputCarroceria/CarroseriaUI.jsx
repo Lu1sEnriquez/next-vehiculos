@@ -32,23 +32,42 @@ function CarroseriaUI() {
     ctx.lineWidth = 2;
 
     coordenadas.forEach((marca) => {
+
+      const newCoordenadas= redimensionarCoordenada(marca,marca.widthOriginal,marca.heightOriginal, width, height)
+      
+
       ctx.beginPath();
-      ctx.moveTo(marca.x - 10, marca.y - 10);
-      ctx.lineTo(marca.x + 10, marca.y + 10);
-      ctx.moveTo(marca.x - 10, marca.y + 10);
-      ctx.lineTo(marca.x + 10, marca.y - 10);
+      ctx.moveTo(newCoordenadas.x - 10, newCoordenadas.y - 10);
+      ctx.lineTo(newCoordenadas.x + 10, newCoordenadas.y + 10);
+      ctx.moveTo(newCoordenadas.x - 10, newCoordenadas.y + 10);
+      ctx.lineTo(newCoordenadas.x + 10, newCoordenadas.y - 10);
       ctx.stroke();
     });
   }
+
+  function redimensionarCoordenada(coordenada, originalWidth, originalHeight, newWidth, newHeight) {
+    const xRatio = newWidth / originalWidth;
+    const yRatio = newHeight / originalHeight;
+
+    const newX = coordenada.x * xRatio;
+    const newY = coordenada.y * yRatio;
+
+    return { x: newX, y: newY };
+}
+
+
+
 
   // Agregar una marca al hacer clic en la imagen
   function addMark(event) {
     const rect = canvasRef.current.getBoundingClientRect();
     console.log(rect);
     const x = event.clientX - rect.left;
+    console.log('x '+x);
     const y = event.clientY - rect.top;
+    console.log('y '+y);
     setCoordenadas((coordenadasAnteriores) => {
-      const nuevasCoordenadas = [...coordenadasAnteriores, { x, y }];
+      const nuevasCoordenadas = [...coordenadasAnteriores, { x, y, widthOriginal : width, heightOriginal : height }];
       return nuevasCoordenadas;
     });
 
@@ -124,10 +143,11 @@ function CarroseriaUI() {
         className="h-1 grow w-5/6  text-black border-2"
         ref={containerCanvas}
       >
-        <div className="container-canvasImg relative border-2 border-green-700 w-full     ">
+        <div className="container-canvasImg relative  w-full     ">
           <Image
+          className="border-2 border-green-700"
             src={autoImage}
-            height={containerCanvasSize.height - 5}
+            height={containerCanvasSize.height }
             alt="car"
             ref={imageRef}
           />
