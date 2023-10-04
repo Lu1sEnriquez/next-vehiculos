@@ -1,9 +1,8 @@
-import Navbar from "@/components/nav/NavbarMovil";
-import "./globals.css";
 
-import NavbarDesktop from "@/components/nav/navbarDesktop";
+
+
 import NavbarPrincipal from "@/components/nav/NavbarPrincipal";
-
+import "./globals.css";
 export const metadata = {
   title: "Sistema Vehicular Itson",
   description: "Sistema para Gestionar Vehiculos en Itson",
