@@ -6,7 +6,7 @@ import { TbReportSearch } from "react-icons/tb";
 
 
  const menuItems = [
-    { name: "INICIO", link: "/", icon: MdOutlineDashboard },
+    { name: "INICIO", link: "/lobby", icon: MdOutlineDashboard },
     { name: "APARTADOS", link: "/apartados", icon: BsCalendarCheck },
     { name: "SALIDAS", link: "/salidas", icon: ImExit, margin: true },
     { name: "LLEGADAS", link: "/llegadas", icon: PiKeyReturnBold },
